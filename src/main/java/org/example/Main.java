@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 
 
+
 class main {
 
     static LinkedList<String> envanter = new LinkedList<String>();
@@ -50,6 +51,8 @@ class main {
 
 
         //ikinci seçim
+
+
         boolean north2 = false;
         boolean east2 = false;
         boolean west2 = false;
@@ -65,7 +68,7 @@ class main {
 
 
                 } else if (kelimeVarMi(Input, "east")) {
-                    System.out.println("you see another house and on top of it it says alchemist you went inside and there is woman with different shaped clothing she is asking you to buy a spell to keep you from dying would you like to buy the spell?");
+                    System.out.println("you see a house and on top of it it says alchemist you went inside and there is woman with different shaped clothing she is asking you to buy a spell to keep you from dying would you like to buy the spell?");
                     sayac++;
                     east2 = true;
 
@@ -150,6 +153,347 @@ class main {
             }
             break;
         }
+
+        boolean north4 = false;
+        boolean east4 = false;
+
+
+        if (west1) {
+            while (sayac == 2) {
+                String Input = scanner.nextLine().toLowerCase();
+
+                if (kelimeVarMi(Input, "north")) {
+                    System.out.println("you're in the middle of nowhere you still see the shapes to your left and also see a smoke rising to the sky on your right");
+
+                    sayac++;
+                    north4 = true;
+
+                } else if (kelimeVarMi(Input, "east")) {
+                    System.out.println("that's where you came from you can't go back until you find your sister");
+                    sayac++;
+                    east4 = true;
+
+                } else if (kelimeVarMi(Input, "west")) {
+                    System.out.println("turns out those big shapes are dozens of trolls  they see you and come after you without being able to do anything they kill you");
+                   System.out.println("The end");
+                   break;
+
+
+                } else if (kelimeVarMi(Input, "south")) {
+                    System.out.println("thats where you came from there is no going back until you find your sister");
+
+
+                } else if (envanterGoster(Input)) {
+                    System.out.println(envanter);
+
+                } else {
+                    System.out.println("i don't understand");
+                }
+            }
+        }
+
+        //3. seçim
+
+        boolean north5 = false;
+        boolean east5 = false;
+        boolean west5 = false;
+        boolean south5 = false;
+
+        if (north1) {
+            if (north2) {
+
+                while (sayac == 3) {
+                    String Input = scanner.nextLine().toLowerCase();
+
+                    if (kelimeVarMi(Input, "north")) {
+                        System.out.println("you've reached somewhere and there are mountains to your right and a river to your left but you can't swim so you decided to follow the river and you saw a bridge heading to north ");
+                        sayac++;
+                        north5 = true;
+
+                    } else if (kelimeVarMi(Input, "east")) {
+                        System.out.println("you've come across another building and this one says alchemist you went inside and she wants you to buy spells but you dont have any space you can drop the axe and take the spell instead. Do you want to?");
+                        sayac++;
+                        east5 = true;
+
+                    } else if (kelimeVarMi(Input, "west")) {
+                        System.out.println("you are in an opening you see big shapes to your left and the ironsmith to your right");
+                        sayac++;
+                        west5 = true;
+
+                    } else if (kelimeVarMi(Input, "south")) {
+                        System.out.println("that's the place you came from you can't go back without your sister");
+
+
+                    } else if (envanterGoster(Input)) {
+                        System.out.println(envanter);
+
+                    } else {
+                        System.out.println("i don't understand");
+                    }
+                }
+            }
+        }
+        while (sayac == 4) {
+            String Input = scanner.nextLine().toLowerCase();
+
+            if (Input.equals("yes")) {
+                if (east5) {
+                    envanter.clear();
+                    envanter.add("spell");
+                }
+
+            }
+            break;
+        }
+        if(north1) {
+            if (east2) {
+                while (sayac == 3) {
+                    String Input = scanner.nextLine().toLowerCase();
+
+                    if (kelimeVarMi(Input, "north")) {
+                        System.out.println("you see mountains you wonder a bit inside the mountains and get lost you die of thirst");
+                        System.out.println("the end");
+                        break;
+
+
+                    } else if (kelimeVarMi(Input, "east")) {
+                        System.out.println("you've fallen into a really deep pit and died");
+                        System.out.println("The End");
+                        break;
+
+                    } else if (kelimeVarMi(Input, "west")) {
+                        System.out.println("you're at the ironsmith again ");
+
+
+                    } else if (kelimeVarMi(Input, "south")) {
+                        System.out.println("you don't want to go back without your sister");
+
+
+                    } else if (envanterGoster(Input)) {
+                        System.out.println(envanter);
+
+                    } else {
+                        System.out.println("i don't understand");
+                    }
+                }
+            }
+        }
+
+        boolean north6 = false;
+
+        if(north1) {
+            if (west2) {
+                while (sayac == 3) {
+                    String Input = scanner.nextLine().toLowerCase();
+
+                    if (kelimeVarMi(Input, "north")) {
+                        System.out.println("you've come across a rive you can't swim or walk to across so you follow the rive and find a bridge heading towards north");
+
+                        sayac++;
+                        north6 = true;
+
+                    } else if (kelimeVarMi(Input, "east")) {
+                        System.out.println("that's where you came from head somewhere else you need to find your sister");
+
+
+                    } else if (kelimeVarMi(Input, "west")) {
+                        System.out.println("the big shaped things turned out to be dozens of trolls and they killed you");
+                        System.out.println("The End");
+                        break;
+
+
+                    } else if (kelimeVarMi(Input, "south")) {
+                        System.out.println("that's there you came from head somewhere else you need to find your sister");
+
+
+                    } else if (envanterGoster(Input)) {
+                        System.out.println(envanter);
+
+                    } else {
+                        System.out.println("i don't understand");
+                    }
+                }
+            }
+        }
+
+
+        boolean north8 = false;
+
+       if (north1) {
+           if (north2) {
+               if (north5) {
+                   while (sayac == 4) {
+                       String Input = scanner.nextLine().toLowerCase();
+
+                       if (kelimeVarMi(Input, "north")) {
+                           System.out.println("you see a cave and a troll guarding it you have to fight the troll to get inside the cave you can fight the troll or go back home without your sister do you want to fight the troll?");
+
+                           sayac++;
+                           north8 = true;
+
+                       } else if (kelimeVarMi(Input, "east")) {
+                           System.out.println("trollst have surrounded you you have to go through the bridge");
+
+
+                       } else if (kelimeVarMi(Input, "west")) {
+                           System.out.println("trollst have surrounded you you have to go through the bridge");
+
+
+                       } else if (kelimeVarMi(Input, "south")) {
+                           System.out.println("trollst have surrounded you you have to go through the bridge");
+
+
+                       } else if (envanterGoster(Input)) {
+                           System.out.println(envanter);
+
+                       } else {
+                           System.out.println("i don't understand");
+                       }
+                   }
+               }
+           }
+       }
+        while (sayac == 5) {
+            String Input = scanner.nextLine().toLowerCase();
+
+            if (Input.equals("yes")) {
+                if (east5) {
+
+                    System.out.printf("you fought him with your %s and won you went inside the cave and saw your sister inside a cage you broke the cage and took your sister",envanter);
+                    System.out.println("the end you won!");
+                }
+
+            }else {
+                System.out.println("troll saw you and started to attack you you weren't prepared so it killed you from behind");
+                System.out.println("The end");
+            }
+            break;
+        }
+
+
+        if (north1) {
+            if (north2) {
+                if (east5) {
+                    while (sayac == 4) {
+                        String Input = scanner.nextLine().toLowerCase();
+
+                        if (kelimeVarMi(Input, "north")) {
+
+                            System.out.println("there are mountains you try to find a path through it but get lost and die of thirst");
+                            System.out.println("the end");
+                            break;
+
+                        } else if (kelimeVarMi(Input, "east")) {
+                            System.out.println("there was a deep pit and you fall into and died");
+                            System.out.println("the end");
+                            break;
+
+
+                        } else if (kelimeVarMi(Input, "west")) {
+                            System.out.println("that's where you came from you need to find your way");
+
+
+                        } else if (kelimeVarMi(Input, "south")) {
+                            System.out.println("you can't go back without your sister");
+
+
+                        } else if (envanterGoster(Input)) {
+                            System.out.println(envanter);
+
+                        } else {
+                            System.out.println("i don't understand");
+                        }
+                    }
+                }
+            }
+        }
+
+        boolean north7 = false;
+
+
+        if (north1) {
+            if (north2) {
+                if (west5) {
+                    while (sayac == 4) {
+                        String Input = scanner.nextLine().toLowerCase();
+
+                        if (kelimeVarMi(Input, "north")) {
+
+                            System.out.println("you saw a river and decided you can't swim across so you followed it and found a bridge heading to north");
+                            north7 = true;
+
+                        } else if (kelimeVarMi(Input, "east")) {
+                            System.out.println("that's where you came from you need to find the way to your sister");
+
+
+
+                        } else if (kelimeVarMi(Input, "west")) {
+                            System.out.println("turns out those big shapes were trolls and they've killed you ");
+                            System.out.println("The End");
+                            break;
+
+
+                        } else if (kelimeVarMi(Input, "south")) {
+                            System.out.println("you can't go back without your sister");
+
+
+                        } else if (envanterGoster(Input)) {
+                            System.out.println(envanter);
+
+                        } else {
+                            System.out.println("i don't understand");
+                        }
+                    }
+                }
+            }
+        }
+
+
+        if (north1) {
+            if (west2) {
+                if (north6) {
+
+                        while (sayac == 4) {
+                            String Input = scanner.nextLine().toLowerCase();
+
+                            if (kelimeVarMi(Input, "north")) {
+
+                                System.out.println("you've headed north and found your sister in a cave and rescue her");
+                                System.out.printf("the end");
+                                break;
+
+                            } else if (kelimeVarMi(Input, "east")) {
+                                System.out.println("you can't go back");
+
+
+                            } else if (kelimeVarMi(Input, "west")) {
+                                System.out.println("the trolls kill you");
+                                System.out.println("The End");
+                                break;
+
+
+                            } else if (kelimeVarMi(Input, "south")) {
+                                System.out.println("you can't go back");
+
+
+                            } else if (envanterGoster(Input)) {
+                                System.out.println(envanter);
+
+                            } else {
+                                System.out.println("i don't understand");
+                            }
+                        }
+
+                }
+            }
+        }
+
+
+
+
+
+
+
 
 
 
